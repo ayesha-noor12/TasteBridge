@@ -8,6 +8,26 @@ Every card is labelled **Qloo-matched**, **Curated** or **Unverified**, and ever
 
 Built for the Qloo Agentic Hackathon. MIT licensed.
 
+## Screenshots
+
+**Profile:** start with the demo student or build your own profile.
+
+![Profile page](docs/screenshots/profile.png)
+
+**Bridge:** the Qloo trace shows what was searched and matched; the slider balances "taste of home" against "something new".
+
+![Bridge page with Qloo trace](docs/screenshots/bridge.png)
+
+![Bridge cards: Familiar and Discover](docs/screenshots/bridge-cards.png)
+
+**7-day plan:** a week of activities within your hours, with one-tap re-planning.
+
+![7-day plan](docs/screenshots/plan.png)
+
+**Compare:** a language-model-only guess next to TasteBridge's Qloo-grounded plan for the same profile.
+
+![Compare view](docs/screenshots/compare.png)
+
 ## How it works
 
 ```
@@ -90,6 +110,10 @@ cd backend && set -a && source .env && set +a && .venv/bin/python scripts/smoke_
 9. Click **Reset my profile** to clear the server session.
 
 ## Docker and deploy
+
+**Live demo:** use the hosted link in the repo's About section; nothing needs to be built to try the app.
+
+Docker is optional (it is what Render uses). If you have Docker installed, run these from the repository root (the folder that contains `Dockerfile`):
 
 ```bash
 docker build -t tastebridge .
