@@ -165,9 +165,16 @@ curl localhost:8000/api/health
 
 ### Vercel
 
-`vercel.json` is set up so that the frontend is built with Vite and served from Vercel's CDN, and `/api/*` runs the FastAPI app as one Python function (`api/index.py`, with dependencies from the root `requirements.txt`). Vercel's Python runtime has no Node, so on Vercel the backend calls the Qloo REST API directly with the same requests the `qloo` CLI makes (`QLOO_TRANSPORT=http`, set automatically when `VERCEL` is present).
+`vercel.json` deploys the repo as one project with two [Vercel Services](https://vercel.com/docs/services) on one domain:
 
-1. Import the repo at vercel.com → **Add New… → Project**. Leave **Root Directory** as `./`. The framework preset and build settings come from `vercel.json`.
+| Service | Root | Public path | What it is |
+|---|---|---|---|
+| `frontend` | `frontend/` | `/` (everything else) | Vite build, served from the CDN |
+| `backend` | `backend/` | `/api/*` | FastAPI (`app.main:app`) as a Python function; it receives the full `/api/...` path |
+
+The browser calls the backend through the public `/api/*` route (same origin), so there are no service bindings. Vercel's Python runtime has no Node, so on Vercel the backend calls the Qloo REST API directly with the same requests the `qloo` CLI makes (`QLOO_TRANSPORT=http`, set automatically when `VERCEL` is present). Vercel installs the backend's runtime dependencies from `backend/pyproject.toml`.
+
+1. Import the repo at vercel.com → **Add New… → Project**. Leave **Root Directory** as `./`; both services and their build settings come from `vercel.json`.
 2. Under **Settings → Environment Variables**, add:
    | Name | Value |
    |---|---|
@@ -179,7 +186,7 @@ curl localhost:8000/api/health
 3. **Add Redis for sessions.** Serverless instances don't share memory, so a session made by one request can be missing on the next. Go to **Storage → Create Database → Upstash for Redis (free)** and connect it to the project. This sets `KV_REST_API_URL` and `KV_REST_API_TOKEN`, and the app then keeps sessions there for 2 hours. Without it the app still runs, but users may see "Your session expired".
 4. Redeploy, then open `https://<your-app>.vercel.app/api/health`. It should show `"qloo_mode": "live"` and `"session_store": "redis"`.
 
-With the CLI: `npm i -g vercel && vercel link && vercel --prod`.
+With the CLI: `npm i -g vercel && vercel link && vercel --prod`. Run both services locally with `vercel dev`.
 
 ## Qloo calls and quota
 

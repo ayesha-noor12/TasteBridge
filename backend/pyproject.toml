@@ -2,7 +2,18 @@
 name = "tastebridge"
 version = "0.1.0"
 requires-python = ">=3.11"
-description = "TasteBridge backend (FastAPI). Dependencies are pinned in requirements.txt."
+description = "TasteBridge backend (FastAPI)."
+# Runtime dependencies (what Vercel installs). Keep in sync with requirements.txt,
+# which Docker uses and which also pins the dev/test tools.
+dependencies = [
+    "fastapi==0.115.6",
+    "pydantic==2.10.4",
+    "httpx==0.28.1",
+    "openai==1.58.1",
+]
+
+[tool.vercel]
+entrypoint = "app.main:app"
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
