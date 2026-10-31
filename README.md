@@ -6,6 +6,8 @@ You pick what you want to keep from home and enter a few loved items (dishes, ar
 
 Every card is labelled **Qloo-matched**, **Curated** or **Unverified**, and every unknown fact is shown as "not verified".
 
+**Live demo:** https://7195cf5e70403e22-182-182-192-191.serveousercontent.com
+
 Built for the Qloo Agentic Hackathon. MIT licensed.
 
 ## Screenshots
@@ -111,7 +113,7 @@ cd backend && set -a && source .env && set +a && .venv/bin/python scripts/smoke_
 
 ## Docker and deploy
 
-**Live demo:** use the hosted link in the repo's About section; nothing needs to be built to try the app.
+**Live demo:** https://7195cf5e70403e22-182-182-192-191.serveousercontent.com (nothing needs to be built to try the app).
 
 Docker is optional (it is what Render uses). If you have Docker installed, run these from the repository root (the folder that contains `Dockerfile`):
 
