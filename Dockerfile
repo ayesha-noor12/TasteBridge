@@ -25,8 +25,8 @@ COPY backend/data backend/data
 COPY backend/tests/fixtures backend/tests/fixtures
 COPY backend/scripts backend/scripts
 COPY --from=web /web/dist backend/static
-RUN useradd --create-home --uid 10001 app && mkdir -p /app/cache && chown -R app /app
-USER app
+RUN mkdir -p /app/cache && chown -R node /app
+USER node
 WORKDIR /app/backend
 EXPOSE 8000
 HEALTHCHECK CMD python3 -c "import urllib.request,os;urllib.request.urlopen(f'http://127.0.0.1:{os.environ[\"PORT\"]}/api/health')" || exit 1
