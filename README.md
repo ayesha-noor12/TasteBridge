@@ -6,7 +6,7 @@ You pick what you want to keep from home and enter a few loved items (dishes, ar
 
 Every card is labelled **Qloo-matched**, **Curated** or **Unverified**, and every unknown fact is shown as "not verified".
 
-**Live demo:** https://7195cf5e70403e22-182-182-192-191.serveousercontent.com
+**Live demo:** https://tastebridge-sand.vercel.app
 
 Built for the Qloo Agentic Hackathon. MIT licensed.
 
@@ -151,7 +151,7 @@ cd backend && set -a && source .env && set +a && .venv/bin/python scripts/smoke_
 
 ## Docker and deploy
 
-**Live demo:** https://7195cf5e70403e22-182-182-192-191.serveousercontent.com (nothing needs to be built to try the app).
+**Live demo:** https://tastebridge-sand.vercel.app (nothing needs to be built to try the app).
 
 Docker is optional (it is what Render uses). If you have Docker installed, run these from the repository root (the folder that contains `Dockerfile`):
 
@@ -184,7 +184,7 @@ The browser calls the backend through the public `/api/*` route (same origin), s
    | `QLOO_TRUSTED_BASE_URL` | `https://hackathon.api.qloo.com` |
    | `LLM_MODE`, `LLM_API_KEY`, `LLM_BASE_URL`, `LLM_MODEL` | optional, as in `.env.example` |
 3. **Add Redis for sessions.** Serverless instances don't share memory, so a session made by one request can be missing on the next. Go to **Storage → Create Database → Upstash for Redis (free)** and connect it to the project. This sets `KV_REST_API_URL` and `KV_REST_API_TOKEN`, and the app then keeps sessions there for 2 hours. Without it the app still runs, but users may see "Your session expired".
-4. Redeploy, then open `https://<your-app>.vercel.app/api/health`. It should show `"qloo_mode": "live"` and `"session_store": "redis"`.
+4. Redeploy, then open `https://<your-app>.vercel.app/api/health` (for the live demo: https://tastebridge-sand.vercel.app/api/health). It should show `"qloo_mode": "live"` and `"session_store": "redis"`.
 
 With the CLI: `npm i -g vercel && vercel link && vercel --prod`. Run both services locally with `vercel dev`.
 
