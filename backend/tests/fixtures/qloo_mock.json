@@ -1,0 +1,245 @@
+{
+  "_notice": "DEMO DATA, not from Qloo. Synthetic fixtures for mock mode and tests. Field names follow the qloo CLI --json output as read from the CLI source (entity_id, name, type, subtype, affinity, properties, tags); not yet confirmed against a live response.",
+  "search": {
+    "coke studio": [
+      {
+        "entity_id": "demo-artist-001",
+        "name": "Coke Studio (DEMO entity)",
+        "type": "urn:entity:artist"
+      }
+    ],
+    "nusrat fateh ali khan": [
+      {
+        "entity_id": "demo-artist-002",
+        "name": "Nusrat Fateh Ali Khan (DEMO entity)",
+        "type": "urn:entity:artist"
+      }
+    ],
+    "biryani": [
+      {
+        "entity_id": "demo-place-003",
+        "name": "Biryani spot (DEMO entity)",
+        "type": "urn:entity:place",
+        "subtype": "urn:entity:place",
+        "tags": [
+          {
+            "name": "restaurant",
+            "tag_id": "urn:tag:demo:restaurant"
+          }
+        ]
+      }
+    ],
+    "lahore street food": [],
+    "chai with friends": []
+  },
+  "insights": {
+    "place": [
+      {
+        "entity_id": "demo-place-010",
+        "name": "DEMO Restaurant A (synthetic)",
+        "type": "urn:entity:place",
+        "subtype": "urn:entity:place",
+        "affinity": 0.95,
+        "tags": [
+          {
+            "name": "restaurant",
+            "tag_id": "urn:tag:demo:restaurant"
+          },
+          {
+            "name": "south asian",
+            "tag_id": "urn:tag:demo:south_asian"
+          }
+        ]
+      },
+      {
+        "entity_id": "demo-place-011",
+        "name": "DEMO Tea House B (synthetic)",
+        "type": "urn:entity:place",
+        "subtype": "urn:entity:place",
+        "affinity": 0.88,
+        "tags": [
+          {
+            "name": "cafe",
+            "tag_id": "urn:tag:demo:cafe"
+          },
+          {
+            "name": "tea",
+            "tag_id": "urn:tag:demo:tea"
+          }
+        ]
+      },
+      {
+        "entity_id": "demo-place-012",
+        "name": "DEMO Music Venue C (synthetic)",
+        "type": "urn:entity:place",
+        "subtype": "urn:entity:place",
+        "affinity": 0.81,
+        "tags": [
+          {
+            "name": "music venue",
+            "tag_id": "urn:tag:demo:music_venue"
+          },
+          {
+            "name": "live music",
+            "tag_id": "urn:tag:demo:live_music"
+          }
+        ]
+      },
+      {
+        "entity_id": "demo-place-013",
+        "name": "DEMO Restaurant D (synthetic)",
+        "type": "urn:entity:place",
+        "subtype": "urn:entity:place",
+        "affinity": 0.74,
+        "tags": [
+          {
+            "name": "restaurant",
+            "tag_id": "urn:tag:demo:restaurant"
+          },
+          {
+            "name": "street food",
+            "tag_id": "urn:tag:demo:street_food"
+          }
+        ]
+      },
+      {
+        "entity_id": "demo-place-014",
+        "name": "DEMO Dessert Shop E (synthetic)",
+        "type": "urn:entity:place",
+        "subtype": "urn:entity:place",
+        "affinity": 0.67,
+        "tags": [
+          {
+            "name": "bakery",
+            "tag_id": "urn:tag:demo:bakery"
+          },
+          {
+            "name": "dessert",
+            "tag_id": "urn:tag:demo:dessert"
+          }
+        ]
+      },
+      {
+        "entity_id": "demo-place-015",
+        "name": "DEMO Lounge F (synthetic)",
+        "type": "urn:entity:place",
+        "subtype": "urn:entity:place",
+        "affinity": 0.6,
+        "tags": [
+          {
+            "name": "bar",
+            "tag_id": "urn:tag:demo:bar"
+          },
+          {
+            "name": "lounge",
+            "tag_id": "urn:tag:demo:lounge"
+          }
+        ]
+      },
+      {
+        "entity_id": "demo-place-016",
+        "name": "DEMO Restaurant G (synthetic)",
+        "type": "urn:entity:place",
+        "subtype": "urn:entity:place",
+        "affinity": 0.53,
+        "tags": [
+          {
+            "name": "restaurant",
+            "tag_id": "urn:tag:demo:restaurant"
+          },
+          {
+            "name": "grill",
+            "tag_id": "urn:tag:demo:grill"
+          }
+        ]
+      },
+      {
+        "entity_id": "demo-place-017",
+        "name": "DEMO Cultural Centre H (synthetic)",
+        "type": "urn:entity:place",
+        "subtype": "urn:entity:place",
+        "affinity": 0.46,
+        "tags": [
+          {
+            "name": "cultural center",
+            "tag_id": "urn:tag:demo:cultural_center"
+          }
+        ]
+      }
+    ],
+    "artist": [
+      {
+        "entity_id": "demo-artist-030",
+        "name": "DEMO Artist P (synthetic)",
+        "type": "urn:entity:artist",
+        "affinity": 0.92,
+        "tags": [
+          {
+            "name": "music",
+            "tag_id": "urn:tag:demo:music"
+          }
+        ]
+      },
+      {
+        "entity_id": "demo-artist-031",
+        "name": "DEMO Artist Q (synthetic)",
+        "type": "urn:entity:artist",
+        "affinity": 0.84,
+        "tags": [
+          {
+            "name": "music",
+            "tag_id": "urn:tag:demo:music"
+          }
+        ]
+      },
+      {
+        "entity_id": "demo-artist-032",
+        "name": "DEMO Artist R (synthetic)",
+        "type": "urn:entity:artist",
+        "affinity": 0.76,
+        "tags": [
+          {
+            "name": "music",
+            "tag_id": "urn:tag:demo:music"
+          }
+        ]
+      },
+      {
+        "entity_id": "demo-artist-033",
+        "name": "DEMO Artist S (synthetic)",
+        "type": "urn:entity:artist",
+        "affinity": 0.68,
+        "tags": [
+          {
+            "name": "music",
+            "tag_id": "urn:tag:demo:music"
+          }
+        ]
+      },
+      {
+        "entity_id": "demo-artist-034",
+        "name": "DEMO Artist T (synthetic)",
+        "type": "urn:entity:artist",
+        "affinity": 0.6,
+        "tags": [
+          {
+            "name": "music",
+            "tag_id": "urn:tag:demo:music"
+          }
+        ]
+      },
+      {
+        "entity_id": "demo-artist-035",
+        "name": "DEMO Artist U (synthetic)",
+        "type": "urn:entity:artist",
+        "affinity": 0.52,
+        "tags": [
+          {
+            "name": "music",
+            "tag_id": "urn:tag:demo:music"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Illustration: a bowl of rice and a cup of tea on a table">
+<rect width="400" height="300" fill="#fbe3cf"/>
+<polygon points="200,300 -320.0,300.0 -316.7,241.8" fill="#f5d0b0"/><polygon points="200,300 -307.0,184.3 -290.8,128.3" fill="#f5d0b0"/><polygon points="200,300 -268.5,74.4 -240.3,23.3" fill="#f5d0b0"/><polygon points="200,300 -206.6,-24.2 -167.7,-67.7" fill="#f5d0b0"/><polygon points="200,300 -124.2,-106.6 -76.7,-140.3" fill="#f5d0b0"/><polygon points="200,300 -25.6,-168.5 28.3,-190.8" fill="#f5d0b0"/><polygon points="200,300 84.3,-207.0 141.8,-216.7" fill="#f5d0b0"/><polygon points="200,300 200.0,-220.0 258.2,-216.7" fill="#f5d0b0"/><polygon points="200,300 315.7,-207.0 371.7,-190.8" fill="#f5d0b0"/><polygon points="200,300 425.6,-168.5 476.7,-140.3" fill="#f5d0b0"/><polygon points="200,300 524.2,-106.6 567.7,-67.7" fill="#f5d0b0"/><polygon points="200,300 606.6,-24.2 640.3,23.3" fill="#f5d0b0"/><polygon points="200,300 668.5,74.4 690.8,128.3" fill="#f5d0b0"/><polygon points="200,300 707.0,184.3 716.7,241.8" fill="#f5d0b0"/>
+<circle cx="200" cy="300" r="120" fill="#efb88c"/>
+<rect y="232" width="400" height="68" fill="#c8693d"/>
+<rect y="232" width="400" height="8" fill="#a9532c"/>
+<ellipse cx="170" cy="236" rx="92" ry="14" fill="#a9532c" opacity=".35"/>
+<path d="M88 196h164a82 46 0 0 1-164 0Z" fill="#1f5f5b"/>
+<path d="M98 196h144" stroke="#174744" stroke-width="6" stroke-linecap="round"/>
+<path d="M104 196c10-34 120-34 132 0Z" fill="#fffaf2"/>
+<circle cx="146" cy="178" r="5" fill="#d9a441"/><circle cx="170" cy="172" r="5" fill="#6f7d3c"/><circle cx="196" cy="180" r="5" fill="#d9a441"/><circle cx="184" cy="168" r="4" fill="#c8693d"/>
+<path d="M140 150c-10-12 10-18 0-32M170 146c-10-12 10-18 0-32M200 150c-10-12 10-18 0-32" fill="none" stroke="#fffaf2" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+<path d="M286 168h46l-6 66h-34Z" fill="#fffaf2" opacity=".9"/>
+<path d="M290 182h38l-4 48h-30Z" fill="#b5652f"/>
+<path d="M332 182c18 0 18 30 0 30" fill="none" stroke="#fffaf2" stroke-width="6"/>
+<path d="M300 158c-8-10 8-14 0-26M318 158c-8-10 8-14 0-26" fill="none" stroke="#fffaf2" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+</svg>

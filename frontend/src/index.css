@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Self-hosted variable fonts (SIL OFL, see public/img/CREDITS.md). System fallbacks keep the app usable without them. */
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces-latin-wght.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter-latin-wght.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-cream font-sans text-ink antialiased; }
+  h1, h2, h3 { @apply font-display; }
+  :focus-visible { @apply rounded-md outline outline-[3px] outline-offset-2 outline-teal-700; }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition duration-150 disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply btn bg-teal-700 text-white shadow-soft hover:-translate-y-px hover:bg-teal-800 hover:shadow-lift; }
+  .btn-ghost { @apply btn border border-ink/20 bg-paper hover:border-ink/40 hover:bg-sand; }
+  .card { @apply rounded-3xl border border-ink/5 bg-paper shadow-soft; }
+  .card-hover { @apply transition duration-200 hover:-translate-y-0.5 hover:shadow-lift; }
+  .panel { @apply card p-5; }
+  .label { @apply mb-1.5 block text-xs font-semibold uppercase tracking-wider text-ink/70; }
+  .input { @apply w-full rounded-xl border border-ink/20 bg-white px-3.5 py-2.5 transition focus:border-teal-700; }
+  .pill { @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+  .chip { @apply inline-flex items-center gap-1 rounded-full bg-cream px-2.5 py-1 text-xs font-medium text-ink/80; }
+  .range { @apply w-full accent-teal-700; }
+  .eyebrow { @apply text-xs font-bold uppercase tracking-[0.18em] text-clay-700; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+  .card { box-shadow: none; }
+}

@@ -1,0 +1,9 @@
+[project]
+name = "tastebridge"
+version = "0.1.0"
+requires-python = ">=3.11"
+description = "TasteBridge backend (FastAPI). Dependencies are pinned in requirements.txt."
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

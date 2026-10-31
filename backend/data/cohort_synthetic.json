@@ -1,0 +1,13 @@
+{
+  "_notice": "Synthetic demo data. Generated sample numbers, not real students.",
+  "label": "Synthetic demo data",
+  "cohort": "Example fall intake (synthetic)",
+  "clusters": [
+    {"label": "Fusion / qawwali music listeners", "count": 34, "suggested_event": "Live music listening night"},
+    {"label": "Street-food explorers", "count": 51, "suggested_event": "Food market walk"},
+    {"label": "Chai and long conversations", "count": 46, "suggested_event": "Weekly tea social"},
+    {"label": "K-drama and anime watchers", "count": 29, "suggested_event": "Screening night"},
+    {"label": "Cricket and football fans", "count": 38, "suggested_event": "Match viewing party"},
+    {"label": "Afrobeats and amapiano", "count": 22, "suggested_event": "Dance workshop"}
+  ]
+}

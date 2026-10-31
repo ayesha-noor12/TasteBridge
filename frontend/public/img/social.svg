@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Illustration: three friends sharing drinks around a table">
+<rect width="400" height="300" fill="#f6e7bf"/>
+<polygon points="200,300 -320.0,300.0 -316.7,241.8" fill="#efdba6"/><polygon points="200,300 -307.0,184.3 -290.8,128.3" fill="#efdba6"/><polygon points="200,300 -268.5,74.4 -240.3,23.3" fill="#efdba6"/><polygon points="200,300 -206.6,-24.2 -167.7,-67.7" fill="#efdba6"/><polygon points="200,300 -124.2,-106.6 -76.7,-140.3" fill="#efdba6"/><polygon points="200,300 -25.6,-168.5 28.3,-190.8" fill="#efdba6"/><polygon points="200,300 84.3,-207.0 141.8,-216.7" fill="#efdba6"/><polygon points="200,300 200.0,-220.0 258.2,-216.7" fill="#efdba6"/><polygon points="200,300 315.7,-207.0 371.7,-190.8" fill="#efdba6"/><polygon points="200,300 425.6,-168.5 476.7,-140.3" fill="#efdba6"/><polygon points="200,300 524.2,-106.6 567.7,-67.7" fill="#efdba6"/><polygon points="200,300 606.6,-24.2 640.3,23.3" fill="#efdba6"/><polygon points="200,300 668.5,74.4 690.8,128.3" fill="#efdba6"/><polygon points="200,300 707.0,184.3 716.7,241.8" fill="#efdba6"/>
+<circle cx="200" cy="300" r="122" fill="#e6c77a"/>
+<circle cx="110" cy="128" r="28" fill="#8a5a3c"/><path d="M62 236a48 60 0 0 1 96 0Z" fill="#1f5f5b"/>
+<circle cx="200" cy="108" r="30" fill="#5b3a29"/><path d="M146 236a54 70 0 0 1 108 0Z" fill="#c8693d"/>
+<circle cx="290" cy="128" r="28" fill="#c79a74"/><path d="M242 236a48 60 0 0 1 96 0Z" fill="#6f7d3c"/>
+<path d="M90 120q20-26 44 0" fill="#3b2a20"/><path d="M174 98q26-30 52 0" fill="#2b1d16"/><path d="M266 118q24-24 48 4" fill="#7a5a3e"/>
+<rect x="40" y="232" width="320" height="16" rx="8" fill="#7a3e57"/>
+<rect y="248" width="400" height="52" fill="#fffaf2" opacity=".55"/>
+<path d="M128 212h18l-3 20h-12Z" fill="#fffaf2"/><path d="M192 208h18l-3 24h-12Z" fill="#fffaf2"/><path d="M256 212h18l-3 20h-12Z" fill="#fffaf2"/>
+<circle cx="200" cy="40" r="6" fill="#c8693d"/><circle cx="160" cy="54" r="4" fill="#1f5f5b"/><circle cx="244" cy="52" r="5" fill="#6f7d3c"/>
+</svg>

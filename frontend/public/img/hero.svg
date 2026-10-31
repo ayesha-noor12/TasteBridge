@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" role="img" aria-label="Illustration: the Toronto skyline at sunset, with a table of tea and food in the foreground">
+<defs><clipPath id="c"><rect width="640" height="440" rx="32"/></clipPath></defs>
+<g clip-path="url(#c)">
+<rect width="640" height="440" fill="#fbe3cf"/>
+<polygon points="320,330 -440.0,330.0 -437.1,263.8" fill="#f5d0b0"/><polygon points="320,330 -428.5,198.0 -414.1,133.3" fill="#f5d0b0"/><polygon points="320,330 -394.2,70.1 -368.8,8.8" fill="#f5d0b0"/><polygon points="320,330 -338.2,-50.0 -302.6,-105.9" fill="#f5d0b0"/><polygon points="320,330 -262.2,-158.5 -217.4,-207.4" fill="#f5d0b0"/><polygon points="320,330 -168.5,-252.2 -115.9,-292.6" fill="#f5d0b0"/><polygon points="320,330 -60.0,-328.2 -1.2,-358.8" fill="#f5d0b0"/><polygon points="320,330 60.1,-384.2 123.3,-404.1" fill="#f5d0b0"/><polygon points="320,330 188.0,-418.5 253.8,-427.1" fill="#f5d0b0"/><polygon points="320,330 320.0,-430.0 386.2,-427.1" fill="#f5d0b0"/><polygon points="320,330 452.0,-418.5 516.7,-404.1" fill="#f5d0b0"/><polygon points="320,330 579.9,-384.2 641.2,-358.8" fill="#f5d0b0"/><polygon points="320,330 700.0,-328.2 755.9,-292.6" fill="#f5d0b0"/><polygon points="320,330 808.5,-252.2 857.4,-207.4" fill="#f5d0b0"/><polygon points="320,330 902.2,-158.5 942.6,-105.9" fill="#f5d0b0"/><polygon points="320,330 978.2,-50.0 1008.8,8.8" fill="#f5d0b0"/><polygon points="320,330 1034.2,70.1 1054.1,133.3" fill="#f5d0b0"/><polygon points="320,330 1068.5,198.0 1077.1,263.8" fill="#f5d0b0"/>
+<circle cx="320" cy="330" r="190" fill="#efb88c"/><circle cx="320" cy="330" r="130" fill="#e39462"/>
+<g fill="#2c6e69" opacity=".55"><rect x="20" y="260" width="40" height="70" rx="3"/>
+<rect x="64" y="220" width="30" height="110" rx="3"/>
+<rect x="98" y="246" width="36" height="84" rx="3"/>
+<rect x="140" y="200" width="26" height="130" rx="3"/>
+<rect x="470" y="210" width="30" height="120" rx="3"/>
+<rect x="504" y="240" width="40" height="90" rx="3"/>
+<rect x="548" y="190" width="28" height="140" rx="3"/>
+<rect x="580" y="230" width="44" height="100" rx="3"/></g>
+<g fill="#1f5f5b"><rect x="170" y="230" width="34" height="100" rx="3"/>
+<rect x="208" y="180" width="28" height="150" rx="3"/>
+<rect x="240" y="210" width="30" height="120" rx="3"/>
+<rect x="360" y="170" width="30" height="160" rx="3"/>
+<rect x="396" y="220" width="36" height="110" rx="3"/>
+<rect x="436" y="190" width="26" height="140" rx="3"/>
+<polygon points="292,330 300,120 310,120 318,330"/><ellipse cx="305" cy="140" rx="20" ry="9"/><rect x="296" y="128" width="18" height="14" rx="4"/><rect x="303" y="40" width="4" height="84"/><ellipse cx="305" cy="104" rx="7" ry="4"/></g>
+<rect y="326" width="640" height="114" fill="#c8693d"/><rect y="326" width="640" height="10" fill="#a9532c"/>
+<path d="M150 380h150a75 42 0 0 1-150 0Z" fill="#1f5f5b"/><path d="M162 380c10-30 116-30 126 0Z" fill="#fffaf2"/>
+<circle cx="200" cy="366" r="5" fill="#d9a441"/><circle cx="226" cy="360" r="5" fill="#6f7d3c"/><circle cx="252" cy="368" r="5" fill="#d9a441"/>
+<path d="M200 344c-8-10 8-14 0-26M236 340c-8-10 8-14 0-26" fill="none" stroke="#fffaf2" stroke-width="5" stroke-linecap="round"/>
+<path d="M372 346h40l-5 58h-30Z" fill="#fffaf2"/><path d="M376 358h32l-4 42h-24Z" fill="#b5652f"/><path d="M412 358c16 0 16 26 0 26" fill="none" stroke="#fffaf2" stroke-width="5"/>
+<path d="M430 352h40l-5 52h-30Z" fill="#fffaf2"/><path d="M434 364h32l-4 36h-24Z" fill="#b5652f"/>
+<ellipse cx="530" cy="384" rx="44" ry="12" fill="#fffaf2" opacity=".9"/><ellipse cx="530" cy="376" rx="34" ry="10" fill="#e6b06e"/><g fill="#a9532c"><circle cx="516" cy="375" r="2.5"/><circle cx="532" cy="372" r="2.5"/><circle cx="546" cy="377" r="2.5"/><circle cx="526" cy="380" r="2.5"/></g>
+<path d="M0 30q160 60 320 14t320 14" fill="none" stroke="#7a3e57" stroke-width="3"/>
+<path d="M14 40l12 28 12-28Z" fill="#c8693d" transform="translate(0 0)"/>
+<path d="M64 40l12 28 12-28Z" fill="#d9a441" transform="translate(0 5)"/>
+<path d="M114 40l12 28 12-28Z" fill="#1f5f5b" transform="translate(0 10)"/>
+<path d="M164 40l12 28 12-28Z" fill="#7a3e57" transform="translate(0 0)"/>
+<path d="M214 40l12 28 12-28Z" fill="#c8693d" transform="translate(0 5)"/>
+<path d="M264 40l12 28 12-28Z" fill="#d9a441" transform="translate(0 10)"/>
+<path d="M314 40l12 28 12-28Z" fill="#1f5f5b" transform="translate(0 0)"/>
+<path d="M364 40l12 28 12-28Z" fill="#7a3e57" transform="translate(0 5)"/>
+<path d="M414 40l12 28 12-28Z" fill="#c8693d" transform="translate(0 10)"/>
+<path d="M464 40l12 28 12-28Z" fill="#d9a441" transform="translate(0 0)"/>
+<path d="M514 40l12 28 12-28Z" fill="#1f5f5b" transform="translate(0 5)"/>
+<path d="M564 40l12 28 12-28Z" fill="#7a3e57" transform="translate(0 10)"/>
+<path d="M614 40l12 28 12-28Z" fill="#c8693d" transform="translate(0 0)"/>
+</g>
+</svg>

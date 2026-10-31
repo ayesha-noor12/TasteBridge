@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Illustration: a small storefront with a striped awning">
+<rect width="400" height="300" fill="#f5dcd6"/>
+<polygon points="200,300 -320.0,300.0 -316.7,241.8" fill="#eccac2"/><polygon points="200,300 -307.0,184.3 -290.8,128.3" fill="#eccac2"/><polygon points="200,300 -268.5,74.4 -240.3,23.3" fill="#eccac2"/><polygon points="200,300 -206.6,-24.2 -167.7,-67.7" fill="#eccac2"/><polygon points="200,300 -124.2,-106.6 -76.7,-140.3" fill="#eccac2"/><polygon points="200,300 -25.6,-168.5 28.3,-190.8" fill="#eccac2"/><polygon points="200,300 84.3,-207.0 141.8,-216.7" fill="#eccac2"/><polygon points="200,300 200.0,-220.0 258.2,-216.7" fill="#eccac2"/><polygon points="200,300 315.7,-207.0 371.7,-190.8" fill="#eccac2"/><polygon points="200,300 425.6,-168.5 476.7,-140.3" fill="#eccac2"/><polygon points="200,300 524.2,-106.6 567.7,-67.7" fill="#eccac2"/><polygon points="200,300 606.6,-24.2 640.3,23.3" fill="#eccac2"/><polygon points="200,300 668.5,74.4 690.8,128.3" fill="#eccac2"/><polygon points="200,300 707.0,184.3 716.7,241.8" fill="#eccac2"/>
+<circle cx="200" cy="300" r="124" fill="#e2a99a"/>
+<rect x="96" y="96" width="208" height="160" rx="6" fill="#fffaf2"/>
+<rect x="96" y="84" width="208" height="22" rx="4" fill="#7a3e57"/>
+<g><path d="M96 106h26v22a13 13 0 0 1-26 0Z" fill="#c8693d"/>
+<path d="M122 106h26v22a13 13 0 0 1-26 0Z" fill="#fffaf2"/>
+<path d="M148 106h26v22a13 13 0 0 1-26 0Z" fill="#c8693d"/>
+<path d="M174 106h26v22a13 13 0 0 1-26 0Z" fill="#fffaf2"/>
+<path d="M200 106h26v22a13 13 0 0 1-26 0Z" fill="#c8693d"/>
+<path d="M226 106h26v22a13 13 0 0 1-26 0Z" fill="#fffaf2"/>
+<path d="M252 106h26v22a13 13 0 0 1-26 0Z" fill="#c8693d"/>
+<path d="M278 106h26v22a13 13 0 0 1-26 0Z" fill="#fffaf2"/></g>
+<rect x="116" y="150" width="88" height="66" rx="4" fill="#a9c6cf"/><path d="M116 150l88 66" stroke="#fffaf2" stroke-width="6" opacity=".5"/>
+<rect x="222" y="146" width="62" height="110" rx="4" fill="#1f5f5b"/><circle cx="272" cy="204" r="4" fill="#d9a441"/>
+<rect x="124" y="196" width="22" height="20" rx="3" fill="#6f7d3c"/><rect x="152" y="202" width="18" height="14" rx="3" fill="#d9a441"/>
+<rect y="256" width="400" height="44" fill="#8c5a4a"/>
+</svg>

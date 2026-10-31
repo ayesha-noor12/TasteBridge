@@ -1,0 +1,10 @@
+.env
+cache/
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+backend/static/
+SUBMISSION.md

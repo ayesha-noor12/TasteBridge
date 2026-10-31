@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Illustration: a guitar and floating music notes">
+<rect width="400" height="300" fill="#e4ecdf"/>
+<polygon points="200,300 -320.0,300.0 -316.7,241.8" fill="#d3e0cc"/><polygon points="200,300 -307.0,184.3 -290.8,128.3" fill="#d3e0cc"/><polygon points="200,300 -268.5,74.4 -240.3,23.3" fill="#d3e0cc"/><polygon points="200,300 -206.6,-24.2 -167.7,-67.7" fill="#d3e0cc"/><polygon points="200,300 -124.2,-106.6 -76.7,-140.3" fill="#d3e0cc"/><polygon points="200,300 -25.6,-168.5 28.3,-190.8" fill="#d3e0cc"/><polygon points="200,300 84.3,-207.0 141.8,-216.7" fill="#d3e0cc"/><polygon points="200,300 200.0,-220.0 258.2,-216.7" fill="#d3e0cc"/><polygon points="200,300 315.7,-207.0 371.7,-190.8" fill="#d3e0cc"/><polygon points="200,300 425.6,-168.5 476.7,-140.3" fill="#d3e0cc"/><polygon points="200,300 524.2,-106.6 567.7,-67.7" fill="#d3e0cc"/><polygon points="200,300 606.6,-24.2 640.3,23.3" fill="#d3e0cc"/><polygon points="200,300 668.5,74.4 690.8,128.3" fill="#d3e0cc"/><polygon points="200,300 707.0,184.3 716.7,241.8" fill="#d3e0cc"/>
+<circle cx="200" cy="300" r="128" fill="#a9c6b9"/>
+<rect y="250" width="400" height="50" fill="#1f5f5b"/>
+<g transform="rotate(-28 210 200)">
+<rect x="203" y="60" width="16" height="120" rx="4" fill="#7a3e57"/>
+<rect x="198" y="44" width="26" height="26" rx="6" fill="#5c2e42"/>
+<circle cx="211" cy="196" r="42" fill="#d9a441"/><circle cx="211" cy="236" r="52" fill="#d9a441"/>
+<circle cx="211" cy="204" r="14" fill="#5c2e42"/>
+<rect x="196" y="250" width="30" height="8" rx="3" fill="#5c2e42"/>
+<path d="M207 70v185M211 70v185M215 70v185" stroke="#fffaf2" stroke-width="1.2"/>
+</g>
+<g fill="#c8693d"><circle cx="96" cy="128" r="12"/><rect x="104" y="72" width="5" height="58"/><path d="M104 72q26 6 22 30q-6-16-22-16Z"/></g>
+<g fill="#1f5f5b"><circle cx="312" cy="96" r="10"/><circle cx="346" cy="88" r="10"/><rect x="318" y="46" width="5" height="52"/><rect x="352" y="38" width="5" height="52"/><path d="M318 46l39-8v10l-39 8Z"/></g>
+</svg>
