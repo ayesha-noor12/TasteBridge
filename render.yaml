@@ -14,10 +14,10 @@ services:
       - key: QLOO_TRUSTED_BASE_URL
         value: https://hackathon.api.qloo.com
       - key: LLM_MODE
-        value: "off"
+        value: "on"
       - key: LLM_API_KEY
         sync: false
       - key: LLM_BASE_URL
-        sync: false
+        sync: https://api.groq.com/openai/v1
       - key: LLM_MODEL
-        sync: false
+        sync: openai/gpt-oss-20b
