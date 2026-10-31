@@ -74,8 +74,29 @@ def qloo_bin() -> str:
     return os.getenv("QLOO_BIN", "qloo")
 
 
+def on_vercel() -> bool:
+    return bool(os.getenv("VERCEL"))
+
+
+def qloo_transport() -> str:
+    """cli spawns the qloo CLI; http calls the same REST endpoints directly (no Node needed)."""
+    default = "http" if on_vercel() else "cli"
+    return "http" if os.getenv("QLOO_TRANSPORT", default).lower() == "http" else "cli"
+
+
 def cache_dir() -> Path:
-    return Path(os.getenv("CACHE_DIR", str(BACKEND_DIR.parent / "cache")))
+    # Vercel functions can only write to /tmp.
+    default = "/tmp/tastebridge-cache" if on_vercel() else str(BACKEND_DIR.parent / "cache")
+    return Path(os.getenv("CACHE_DIR", default))
+
+
+def redis_rest() -> tuple[str, str] | None:
+    """Upstash Redis REST credentials (Vercel Marketplace sets KV_* or UPSTASH_* names)."""
+    for prefix in ("KV_REST_API", "UPSTASH_REDIS_REST"):
+        url, token = os.getenv(f"{prefix}_URL", ""), os.getenv(f"{prefix}_TOKEN", "")
+        if url and token:
+            return url, token
+    return None
 
 
 def llm_mode() -> str:
@@ -93,7 +114,7 @@ def llm_settings() -> dict:
 
 def secret_values() -> list[str]:
     """Env values that must never appear in logs, errors or responses."""
-    names = ("QLOO_API_KEY", "LLM_API_KEY")
+    names = ("QLOO_API_KEY", "LLM_API_KEY", "KV_REST_API_TOKEN", "UPSTASH_REDIS_REST_TOKEN")
     return [v for v in (os.getenv(n, "") for n in names) if len(v) >= 4]
 
 

@@ -1,0 +1,6 @@
+# Runtime dependencies for the Vercel Python function (api/index.py).
+# Keep in sync with backend/requirements.txt (which also has dev/test tools).
+fastapi==0.115.6
+pydantic==2.10.4
+httpx==0.28.1
+openai==1.58.1

@@ -20,7 +20,7 @@ from .models import (
     SessionResponse,
 )
 from .qloo_adapter import QlooAdapter, QlooError
-from .sessions import Session, SessionStore
+from .sessions import Session, SessionStore, make_store
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
 log = logging.getLogger("tastebridge")
@@ -30,7 +30,7 @@ app = FastAPI(title="TasteBridge", version=config.VERSION)
 
 class _State:
     adapter: QlooAdapter | None = None
-    store = SessionStore()
+    store = make_store()
 
 
 state = _State()
@@ -45,15 +45,15 @@ def get_adapter() -> QlooAdapter:
 def reset_state() -> None:
     """Used by tests to pick up env changes."""
     state.adapter = None
-    state.store = SessionStore()
+    state.store = make_store()
 
 
 class SessionNotFound(Exception):
     pass
 
 
-def _session(sid: str) -> Session:
-    s = state.store.get(sid)
+async def _session(sid: str) -> Session:
+    s = await state.store.get(sid)
     if s is None:
         raise SessionNotFound()
     return s
@@ -97,6 +97,7 @@ async def health():
         "qloo_calls_used": adapter.calls_used,
         "qloo_cache_hits": adapter.cache_hits,
         "llm_mode": config.llm_mode(),
+        "session_store": "memory" if isinstance(state.store, SessionStore) else "redis",
     }
 
 
@@ -141,45 +142,54 @@ async def create_session(profile: Profile):
     adapter = get_adapter()
     summary = await resolver.resolve(adapter, profile.loved_items)
     cands, notes = await candidates.build_candidates(adapter, profile, summary)
-    sid = state.store.create(Session(profile=profile, resolver=summary, candidates=cands, qloo_notes=notes))
+    sid = await state.store.create(Session(profile=profile, resolver=summary, candidates=cands, qloo_notes=notes))
     return SessionResponse(session_id=sid, resolver=summary, qloo_mode=adapter.mode)
 
 
 @app.delete("/api/session/{session_id}")
 async def delete_session(session_id: str):
-    return {"deleted": state.store.delete(session_id)}
+    return {"deleted": await state.store.delete(session_id)}
 
 
 @app.post("/api/bridge", response_model=BridgeResponse)
 async def bridge(req: SessionRequest):
-    return pipeline.bridge(_session(req.session_id))
+    s = await _session(req.session_id)
+    result = pipeline.bridge(s)
+    await state.store.save(req.session_id, s)
+    return result
 
 
 @app.post("/api/plan", response_model=PlanResponse)
 async def plan(req: SessionRequest):
-    s = _session(req.session_id)
-    return PlanResponse(plan=await pipeline.make_plan(s), profile=s.profile)
+    s = await _session(req.session_id)
+    result = PlanResponse(plan=await pipeline.make_plan(s), profile=s.profile)
+    await state.store.save(req.session_id, s)
+    return result
 
 
 @app.post("/api/feedback", response_model=FeedbackResponse)
 async def give_feedback(req: FeedbackRequest):
-    s = _session(req.session_id)
+    s = await _session(req.session_id)
     new_plan, changes, changed_ids = await feedback.handle(s, req.action, req.item_id)
+    await state.store.save(req.session_id, s)
     return FeedbackResponse(plan=new_plan, profile=s.profile, changes=changes, changed_ids=changed_ids)
 
 
 @app.post("/api/familiarity", response_model=BridgeResponse)
 async def set_familiarity(req: FamiliarityRequest):
-    s = _session(req.session_id)
+    s = await _session(req.session_id)
     s.profile = s.profile.model_copy(update={"familiarity": req.value})
     s.plan = None  # the next /api/plan call reflects the new slider value
-    return pipeline.bridge(s)
+    result = pipeline.bridge(s)
+    await state.store.save(req.session_id, s)
+    return result
 
 
 @app.get("/api/compare/{session_id}", response_model=CompareResponse)
 async def compare(session_id: str):
-    s = _session(session_id)
+    s = await _session(session_id)
     current = s.plan or await pipeline.make_plan(s)
+    await state.store.save(session_id, s)
     return CompareResponse(baseline=await baseline.run_baseline(s.profile), tastebridge=current.items, resolver=s.resolver)
 
 

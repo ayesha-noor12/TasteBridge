@@ -7,15 +7,21 @@ Only the two commands confirmed by discovery (docs/QLOO_NOTES.md) are built:
 User text is only ever passed as the value half of `--flag=value`, so it can never
 be read as a flag. The credential is read by the CLI from QLOO_API_KEY in the
 environment; it is never put on the command line.
+
+With QLOO_TRANSPORT=http (the default on Vercel) the same argv is served by
+http_runner, which makes the CLI's REST calls directly instead of spawning Node.
 """
 
 import asyncio
 import hashlib
 import json
 import logging
+import os
 import re
 from collections.abc import Awaitable, Callable
 from pathlib import Path
+
+import httpx
 
 from . import config
 from .models import QlooEntity, QlooFacts, QlooResult
@@ -83,6 +89,71 @@ async def subprocess_runner(argv: list[str], timeout: float) -> tuple[int, str, 
         await proc.wait()
         raise
     return proc.returncode or 0, out.decode("utf-8", "replace"), err.decode("utf-8", "replace")
+
+
+OFFICIAL_BASE_URL = "https://api.qloo.com"
+EXIT_API_ERROR = 5
+
+
+def _cli_error(code: str, message: str) -> str:
+    return json.dumps({"error": True, "code": code, "message": message})
+
+
+async def http_runner(argv: list[str], timeout: float) -> tuple[int, str, str]:
+    """Same contract as subprocess_runner, but calls the Qloo REST API directly.
+
+    Used where the Node CLI cannot run (Vercel's Python functions). It sends the same
+    requests as `qloo api search|insights` (see docs/QLOO_NOTES.md) and prints what the
+    CLI prints for --json, so parsing, caching and error mapping stay shared.
+    """
+    command = argv[2]
+    flags = dict(a[2:].split("=", 1) for a in argv[3:] if a.startswith("--") and "=" in a)
+    if command == "search":
+        endpoint, params = "/search", {"query": flags["query"], "take": flags["take"]}
+        if "type" in flags:
+            params["types"] = f"urn:entity:{flags['type']}"
+    elif command == "insights":
+        endpoint = "/v2/insights"
+        params = {
+            "filter.type": f"urn:entity:{flags['type']}",
+            "signal.interests.entities": flags["signal-entities"],
+            "take": flags["take"],
+        }
+        if "filter-location" in flags:
+            params["filter.location.query"] = flags["filter-location"]
+    else:
+        raise ValueError(f"unsupported qloo command: {command}")
+
+    api_key = os.getenv("QLOO_API_KEY", "").strip()
+    if not api_key:
+        return EXIT_AUTH, _cli_error("AUTH_FAILED", "No Qloo API key configured"), ""
+    # Like the CLI: the key goes only to the official endpoint or one explicitly trusted.
+    base_url = (os.getenv("QLOO_BASE_URL", "").strip() or OFFICIAL_BASE_URL).rstrip("/")
+    trusted = os.getenv("QLOO_TRUSTED_BASE_URL", "").strip().rstrip("/")
+    if not base_url.startswith("https://") or base_url not in (OFFICIAL_BASE_URL, trusted):
+        return EXIT_AUTH, _cli_error("AUTH_FAILED", "Qloo base URL is not trusted"), ""
+
+    try:
+        async with httpx.AsyncClient(timeout=timeout) as client:
+            resp = await client.get(
+                base_url + endpoint, params=params, headers={"X-Api-Key": api_key, "Accept": "application/json"}
+            )
+    except httpx.TimeoutException:
+        raise asyncio.TimeoutError()
+    except httpx.HTTPError as exc:
+        return EXIT_API_ERROR, _cli_error("API_ERROR", f"network error: {type(exc).__name__}"), ""
+
+    if resp.status_code >= 400:
+        message = f"API request failed: {resp.status_code} {resp.reason_phrase}"
+        return EXIT_API_ERROR, _cli_error("API_ERROR", message), ""
+    try:
+        body = resp.json()
+    except ValueError:
+        return EXIT_API_ERROR, resp.text[:300], ""
+    results = body.get("results") if isinstance(body, dict) else None
+    if command == "insights" and isinstance(results, dict):
+        results = results.get("entities")
+    return 0, json.dumps(results or []), ""
 
 
 def build_search_argv(binary: str, query: str, entity_type: str | None, take: int) -> list[str]:
@@ -265,7 +336,7 @@ class QlooAdapter:
         self.mode = mode or config.qloo_mode()
         self.binary = binary or config.qloo_bin()
         self.cache_dir = cache_dir or config.cache_dir()
-        self.runner = runner or subprocess_runner
+        self.runner = runner or (http_runner if config.qloo_transport() == "http" else subprocess_runner)
         self.timeout = timeout
         self.fixtures_dir = fixtures_dir
         self.calls_used = 0  # real CLI invocations in this process
