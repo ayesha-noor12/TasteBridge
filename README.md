@@ -10,6 +10,44 @@ Every card is labelled **Qloo-matched**, **Curated** or **Unverified**, and ever
 
 Built for the Qloo Agentic Hackathon. MIT licensed.
 
+## What it does
+
+International students arrive in a new city and struggle to find food, music, places and people that feel compatible. Generic advice ("visit the ethnic district") is guesswork, ignores budget and time, and confuses nationality with taste.
+
+TasteBridge asks the student what *they* want to keep from home and what they love: a dish, an artist, a show, a place. It never infers identity from where they come from. It then:
+
+1. Resolves each loved item to a Qloo entity and shows which ones Qloo could not find.
+2. Asks Qloo for places in Toronto, and for related artists, seeded by those entities. It keeps only places that Qloo's own genre marks as an outing (restaurants, cafes, venues), so hotels and offices never show up as "food".
+3. Shows Qloo's venue facts on each card (photo, rating, price level, today's hours, cuisine, neighbourhood, description) with Directions and Website links.
+4. Merges them with a hand-curated local list of real Toronto social opportunities (a U of T language exchange, a newcomer community meal, food bank volunteer shifts, free museum evenings), each checked against its official page.
+5. Applies the student's budget, travel, diet and comfort limits in code, then ranks with a Familiar ↔ Discover slider.
+6. Builds a 7-day plan with at least one social activity, within their weekly free hours.
+7. Re-plans when the student says "too expensive", "I don't want to go alone" or "more familiar", and lists exactly what changed and why.
+
+## Why it is Qloo-powered
+
+Qloo is the taste layer: the step from "loves Coke Studio and biryani" to "these Toronto places and these artists" is Qloo's `search` and `insights` (with `filter.location.query=Toronto`), called at runtime through the official `qloo` CLI. Every Qloo card shows the seed inputs, the Qloo entity, Qloo's affinity value exactly as returned, the location signal used, and the raw (truncated) Qloo record. Ranking weights Qloo evidence highest (45%), and a curated item can never outrank a Qloo match on taste alone.
+
+## What Qloo contributes vs. curated data
+
+| | Qloo | Curated file |
+|---|---|---|
+| Taste links from your inputs | yes | no |
+| Places in Toronto | yes (location filter) | yes |
+| Rating, price level (1-4), opening hours, photo | yes (shown as Qloo's) | no |
+| Exact price, travel time, diet, verified address/URL | no (shown as "not verified") | yes, where the official page states them |
+| Recurring social activities | no | yes |
+
+Each card carries a label: **Qloo-matched**, **Curated** (has url + address + verified date), or **Unverified**.
+
+## How the baseline compared
+
+The Compare page sends the same profile to the same LLM with no Qloo data and shows its raw suggestions, labelled "Unverified, LLM-only", next to the TasteBridge plan.
+
+## Built with
+
+Qloo (`@qloo/qloo-harness` CLI), FastAPI, Pydantic, React, Vite, TypeScript, Tailwind CSS, Docker.
+
 ## Screenshots
 
 **Profile:** start with the demo student or build your own profile.
